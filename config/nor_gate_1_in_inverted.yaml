@@ -27,7 +27,7 @@ cells:
 
         models:
             - "config/mc_switches.spice"
-            - "/foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt"
+            - "sky130A/libs.tech/ngspice/sky130.lib.spice tt"
 
         area: 22.6848
 
