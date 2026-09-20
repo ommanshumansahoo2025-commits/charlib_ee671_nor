@@ -4,10 +4,10 @@ settings:
   temperature: 25
   named_nodes:
     primary_power:
-      name: vdd
+      name: VDD
       voltage: 1.8
     primary_ground:
-      name: vss
+      name: VSS
       voltage: 0.0
 
 cells:
@@ -20,4 +20,4 @@ cells:
     data_slews: [0.01, 0.1, 1.0]
     loads: [0.0005, 0.01, 0.1]
     functions:
-      - "out = !( !A + B )"
+      - "OUT = !( !A + B )"
