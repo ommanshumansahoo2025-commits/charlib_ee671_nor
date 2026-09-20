@@ -37,7 +37,7 @@ cells:
         models:
             - /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 
-        area: 22.8208
+        area: 22.6848
 
         inputs:
             - A
