@@ -1,0 +1,56 @@
+* NGSPICE file created from nor_gate_1_in_inverted.ext - technology: sky130A
+
+.subckt INVX1 vss z vdd a
+X0 z a vss vss sky130_fd_pr__nfet_01v8 ad=0.126 pd=1.44 as=0.126 ps=1.44 w=0.42 l=0.15
+**devattr s=5040,288 d=5040,288
+X1 z a vdd vdd sky130_fd_pr__pfet_01v8 ad=0.378 pd=3.12 as=0.378 ps=3.12 w=1.26 l=0.15
+**devattr s=15120,624 d=15120,624
+C0 vdd a 0.08618f
+C1 a z 0.03567f
+C2 vdd z 0.10833f
+C3 z vss 0.24118f
+C4 vdd vss 0.55073f
+.ends
+
+.subckt nor_gate_1_in_inverted A B vdd vss out
+XINVX1_0 vss A_inv vdd A INVX1
+X0 a_420_296# B out vdd sky130_fd_pr__pfet_01v8 ad=0.411 pd=2.3125 as=0.411 ps=1.97 w=1.37 l=0.15
+**devattr s=16440,394 d=16440,394
+X1 a_420_296# A_inv vdd vdd sky130_fd_pr__pfet_01v8 ad=0.411 pd=2.3125 as=0.411 ps=2.655 w=1.37 l=0.15
+**devattr s=16440,668 d=16440,394
+X2 a_420_296# B out vdd sky130_fd_pr__pfet_01v8 ad=0.411 pd=2.3125 as=0.411 ps=1.97 w=1.37 l=0.15
+**devattr s=16440,394 d=16440,668
+X3 a_420_296# A_inv vdd vdd sky130_fd_pr__pfet_01v8 ad=0.411 pd=2.3125 as=0.411 ps=2.655 w=1.37 l=0.15
+**devattr s=16440,394 d=16440,394
+X4 out B a_420_296# vdd sky130_fd_pr__pfet_01v8 ad=0.411 pd=1.97 as=0.411 ps=2.3125 w=1.37 l=0.15
+**devattr s=16440,668 d=16440,394
+X5 out B a_420_296# vdd sky130_fd_pr__pfet_01v8 ad=0.411 pd=1.97 as=0.411 ps=2.3125 w=1.37 l=0.15
+**devattr s=16440,394 d=16440,394
+X6 vdd A_inv a_420_296# vdd sky130_fd_pr__pfet_01v8 ad=0.411 pd=2.655 as=0.411 ps=2.3125 w=1.37 l=0.15
+**devattr s=16440,394 d=16440,394
+X7 out B vss vss sky130_fd_pr__nfet_01v8 ad=0.234 pd=2.16 as=0.234 ps=2.16 w=0.78 l=0.15
+**devattr s=9360,432 d=9360,432
+X8 out A_inv vss vss sky130_fd_pr__nfet_01v8 ad=0.234 pd=2.16 as=0.234 ps=2.16 w=0.78 l=0.15
+**devattr s=9360,432 d=9360,432
+X9 vdd A_inv a_420_296# vdd sky130_fd_pr__pfet_01v8 ad=0.411 pd=2.655 as=0.411 ps=2.3125 w=1.37 l=0.15
+**devattr s=16440,394 d=16440,668
+C0 A_inv A 0.01732f
+C1 a_420_296# A_inv 0.13679f
+C2 vdd A_inv 0.4487f
+C3 a_420_296# A 0
+C4 vdd A 0.04599f
+C5 vdd a_420_296# 0.82709f
+C6 B out 0.16133f
+C7 out A_inv 0.01363f
+C8 out A 0
+C9 a_420_296# out 0.55071f
+C10 vdd out 0.11227f
+C11 B A_inv 0.00796f
+C12 a_420_296# B 0.09843f
+C13 vdd B 0.23844f
+C14 out vss 0.86643f
+C15 vdd vss 2.04599f
+C16 a_420_296# vss 0.68304f
+C17 A vss 0.00529f
+.ends
+
