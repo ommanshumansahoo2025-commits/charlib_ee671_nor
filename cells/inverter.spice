@@ -1,0 +1,10 @@
+* Sky130 CMOS Inverter
+.subckt inverter IN OUT VDD VSS
+
+* NMOS Transistor (Drain, Gate, Source, Body, Model, Width, Length)
+XM1 OUT IN VSS VSS sky130_fd_pr__nfet_01v8 w=1.0 l=0.15
+
+* PMOS Transistor (Drain, Gate, Source, Body, Model, Width, Length)
+XM2 OUT IN VDD VDD sky130_fd_pr__pfet_01v8 w=2.0 l=0.15
+
+.ends inverter

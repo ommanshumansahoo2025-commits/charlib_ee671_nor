@@ -1,0 +1,8 @@
+* Global Monte-Carlo switches for the sky130 device models.
+* The sky130_fd_pr FET model cards reference mc_mm_switch (mismatch) and
+* mc_pr_switch (process) inside their agauss() expressions but do not define
+* them. Without these params ngspice aborts with "Undefined parameter
+* [mc_mm_switch]" and a subckt stack underflow. Set to 0 to characterize at
+* the nominal corner (no Monte-Carlo variation).
+.param mc_mm_switch=0
+.param mc_pr_switch=0

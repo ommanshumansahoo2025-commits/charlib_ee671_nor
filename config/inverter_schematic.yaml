@@ -1,0 +1,26 @@
+settings:
+  lib_name: inverter_sky130_tt_1v80_025C_schematic
+  results_dir: output
+  temperature: 25
+
+  named_nodes:
+    primary_power:
+      name: VDD
+      voltage: 1.8
+    primary_ground:
+      name: VSS
+      voltage: 0.0
+
+cells:
+  inverter:
+    netlist: "cells/inverter.spice"          # pre-layout (schematic) netlist
+    # Physical layout area in um^2 (not derivable from SPICE). Placeholder is
+    # the sky130 HD inv_1 std-cell footprint; set to your real layout area.
+    area: 3.7536
+    models:
+      - "config/mc_switches.spice"
+      - "sky130A/libs.tech/ngspice/sky130.lib.spice tt"
+    data_slews: [0.01, 0.05, 0.1, 0.2]
+    loads: [0.001, 0.005, 0.01, 0.05]
+    functions:
+      - "OUT = !IN"

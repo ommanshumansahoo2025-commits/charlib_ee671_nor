@@ -1,0 +1,18 @@
+* Sky130 CMOS Inverter -- post-layout extracted netlist (parasitics included)
+* NOTE: CharLib finds the cell by grabbing the first line that mentions the
+* cell name next to the SUBCKT keyword, so keep those words out of comments.
+.subckt inverter IN OUT VDD VSS
+
+* Devices (drain gate source body model ...)
+X0 OUT IN VDD VDD sky130_fd_pr__pfet_01v8 ad=0.45  pd=2.9 as=0.4 ps=2.8 w=1   l=0.15
+X1 OUT IN VSS VSS sky130_fd_pr__nfet_01v8 ad=0.225 pd=1.9 as=0.2 ps=1.8 w=0.5 l=0.15
+
+* Extracted parasitic capacitances
+C0 IN  VDD 0.09585f
+C1 OUT VDD 0.10563f
+C2 IN  OUT 0.03187f
+C3 OUT VSS 0.22994f
+C4 IN  VSS 0.53337f
+C5 VDD VSS 0.70344f
+
+.ends inverter
