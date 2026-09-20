@@ -1,52 +1,23 @@
 settings:
-    lib_name: nor_2_input_inverted
-
-    units:
-        time: ns
-        voltage: V
-        current: uA
-        leakage_power: nW
-        capacitive_load: pF
-        energy: pJ
-
-    named_nodes:
-        primary_power:
-            name: VDD
-            voltage: 1.8
-
-        primary_ground:
-            name: VSS
-            voltage: 0.0
-
-    debug: true
-    results_dir: results
+  lib_name: nor_2_input_inverted
+  results_dir: output
+  temperature: 25
+  named_nodes:
+    primary_power:
+      name: vdd
+      voltage: 1.8
+    primary_ground:
+      name: vss
+      voltage: 0.0
 
 cells:
-    nor_gate_1_in_inverted:
-        netlist: "cells/nor_2_pex.spice"
-
-        models:
-            - "config/mc_switches.spice"
-            - "sky130A/libs.tech/ngspice/sky130.lib.spice tt"
-
-        area: 22.6848
-
-        inputs:
-            - A
-            - B
-
-        outputs:
-            - OUT
-
-        functions:
-            - "OUT = !( !A + B )"
-
-        data_slews:
-            - 0.01
-            - 0.1
-            - 1.0
-
-        loads:
-            - 0.0005
-            - 0.01
-            - 0.1
+  nor_gate_1_in_inverted:
+    netlist: "cells/nor_2_pex.spice"
+    area: 22.6848
+    models:
+      - "config/mc_switches.spice"
+      - "sky130A/libs.tech/ngspice/sky130.lib.spice tt"
+    data_slews: [0.01, 0.1, 1.0]
+    loads: [0.0005, 0.01, 0.1]
+    functions:
+      - "out = !( !A + B )"
