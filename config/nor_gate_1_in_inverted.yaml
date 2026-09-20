@@ -21,9 +21,6 @@ settings:
     debug: true
     results_dir: results
 
-    simulation:
-        input_capacitance_procedure: charge_integration
-
 cells:
     nor_gate_1_in_inverted:
         netlist: "cells/nor_2_pex.spice"
