@@ -20,4 +20,4 @@ cells:
     data_slews: [0.01, 0.1, 1.0]
     loads: [0.0005, 0.01, 0.1]
     functions:
-      - "OUT = (A * !B)"
+      - "OUT = (A * (!B))"
