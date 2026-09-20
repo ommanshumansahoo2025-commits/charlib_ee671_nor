@@ -11,11 +11,11 @@ settings:
 
     named_nodes:
         primary_power:
-            name: vdd
+            name: VDD
             voltage: 1.8
 
         primary_ground:
-            name: vss
+            name: VSS
             voltage: 0.0
 
     debug: true
