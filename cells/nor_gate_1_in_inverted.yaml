@@ -32,7 +32,7 @@ cells:
 
     nor_gate_1_in_inverted:
 
-        netlist: nor_lib.spice
+        netlist: nor_2_pex.spice
 
         models:
             - /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
